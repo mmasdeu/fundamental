@@ -1,0 +1,663 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0.1\n"
+"POT-Creation-Date: 2022-11-16 08:22:13.652576\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+
+#: game_config
+msgid "TheFundamentalGame"
+msgstr ""
+
+#: intro
+msgid ""
+"# The Fundamental Game, version 1.0.0.\n"
+"\n"
+"## What is this game?\n"
+"\n"
+"Welcome to The Fundamental Game! In this game, you will get introduced\n"
+"to the **LEAN** theorem prover, which will allow you to formalize\n"
+"some results that we have seen in class. Hopefully it will be lots of fun!\n"
+"\n"
+"To get started, click on the first world, the blue circle labelled "
+"\"Tutorial World\", on the right.\n"
+"Once you complete all the levels of the Tutorial World, hit \"Main Menu\" in "
+"the top left corner of the screen to get back here.\n"
+"In this way, you will see that the first blue circle has turned into green, "
+"which\n"
+"will give you access to the following world.\n"
+"You can use this menu to navigate as you try more of the problems.\n"
+"\n"
+"Have fun!\n"
+"\n"
+"## Thanks\n"
+"\n"
+"This game uses Mohammad Pedramfar's <a href=\"https://github.com/mpedramfar/"
+"Lean-game-maker\">*Lean Game Maker* engine</a>.\n"
+"\n"
+"Some of the explanations are taken/adapted from the original <a "
+"href=\"https://www.ma.imperial.ac.uk/~buzzard/xena/natural_number_game/\"\n"
+"  target=\"blank\">Natural Number Game</a>, by Kevin Buzzard and Mohammad "
+"Pedramfar.\n"
+"\n"
+"Lean is a computer theorem prover being developed at Microsoft Research.\n"
+"\n"
+"## Tactic table\n"
+"\n"
+"In this game you will learn the following tactics: `assumption`, `rw`, "
+"`intro`, `apply`,\n"
+"`use`, `split`, `left`, `right`, `have`, `cases` and the more high-level "
+"`ring` and `group`.\n"
+"\n"
+"Below you can find a quick reference to figure out which tactic may be "
+"useful\n"
+"in different contexts\n"
+"\n"
+"| If you see   | In goal          | In hypothesis `h`|\n"
+"|=========|======================|==============================|\n"
+"|∧        |   `split`          |        `cases h with h1 h2`  |\n"
+"| ∨       |   `left` / `right`         |     `cases h`|\n"
+"|→       |   `intro`          |        `have h' := h x`  |\n"
+"| ↔       |   `split`         |     `cases h with h1 h2`|\n"
+"|∀       |   `intro`         |        `have h' := h x`  |\n"
+"| ∃       |   `use`         |     `cases h with x hx`|\n"
+"| ¬       | `intro hc` |  ? |\n"
+"\n"
+msgstr ""
+
+#: world_config
+msgid "Tutorial World"
+msgstr ""
+
+#: Tutorial World level 1
+msgid ""
+"## The `assumption` tactic\n"
+"\n"
+"The first tactic that we'll learn is the `assumption` tactic. This can be "
+"used\n"
+"when your goal is exactly one of your hypotheses. In the following example,\n"
+"there are three hypotheses, namely the fact that $a$ is $3$ (hypothesis "
+"`ha`), the\n"
+"fact that $b$ is $4$ (hypothesis `hb`) and the fact that $c$ is $5$ "
+"(hypothesis `hc`).\n"
+"\n"
+"Since we want to prove that $b=4$, which is one of our hypotheses, we should "
+"be able to\n"
+"win by typing `assumption,` (**don't forget the comma**). Delete the `sorry` "
+"and try it.\n"
+"\n"
+"**Pro tip:** If the hypothesis to be used is called, say `hb`, you can also "
+"close the goal\n"
+"by using `exact hb,` instead. Sometimes it is more efficient to do so, "
+"especially if we believe\n"
+"that assumption should work and we don't know why. The `exact` tactic will "
+"give us information\n"
+"about why that does not work.\n"
+"\n"
+msgstr ""
+
+#: Tutorial World level 1
+msgid "If $a$ is $3$ and $b$ is $4$ and $c$ is $5$, then $b$ is $4$.\n"
+msgstr ""
+
+#: Tutorial World level 2
+msgid ""
+"## The `rw` tactic\n"
+"\n"
+"The next tactic to learn is the `rw` tactic (short for `rewrite`). If we "
+"have a proof $h$ of an equality\n"
+"$a=b$, then `rw h` will replace all occurrences of $a$ in the goal with $b$. "
+"It also works with `↔` instead of `=`.\n"
+"That is, if we have two equivalent statements, it will replace one with the "
+"other.\n"
+"\n"
+"In the example at hand, we have a proof $h$ of the fact that $a=3$. We want "
+"to prove that $a+5=8$,\n"
+"which we could do by substituting in the value of $a$. Try to erase the "
+"`sorry` and replace it with\n"
+"`rw h,` and see if it works.\n"
+msgstr ""
+
+#: Tutorial World level 2
+msgid "If $a = 3$, then $a + 5 = 8$.\n"
+msgstr ""
+
+#: Tutorial World level 3
+msgid ""
+"## More on `rw`\n"
+"\n"
+"We have seen that the `rw` tactic replaces occurrences of $a$ with $b$ if we "
+"have `h : a = b`.\n"
+"If we want to replace the occurrences of $b$ into $a$, we can use the fact "
+"that `h.symm` is a proof of\n"
+"$b = a$ (and hence do `rw h.symm`) or use `rw ← h` (type `←` with \\l). Try "
+"it below.\n"
+msgstr ""
+
+#: Tutorial World level 3
+msgid ""
+"**Pro tip:** In very rare occasions, we might end up with a goal of the form "
+"`a = a`, where\n"
+"`a` is a very complicated expression. This can be closed with the `refl` "
+"tactic (it means\n"
+"*reflexivity*).\n"
+msgstr ""
+
+#: Tutorial World level 3
+msgid "If $a = b + c$ and $a = 3$, then $b + c = 3$.\n"
+msgstr ""
+
+#: Tutorial World level 4
+msgid ""
+"## Some more on `rw`\n"
+"\n"
+"We can do replacements in hypotheses, not just on the goal, by using `at`. "
+"For instance, in the example below\n"
+"we can substitute the value of $a=3$ in `h1` (via `rw h2 at h1`), or "
+"substituting the value of $a=b+c$\n"
+"in `h2` (via `rw h1 at h2`). This will allow you to close the goal without "
+"using `assumption`, by\n"
+"doing one more `rw`.\n"
+msgstr ""
+
+#: Tutorial World level 4
+msgid "If $a = b+c$ and $a = 3$, then $b + c = 3$.\n"
+msgstr ""
+
+#: Tutorial World level 5
+msgid ""
+"## The `intro` tactic\n"
+"\n"
+"Many statements in mathematics start with the phrase: \"for all $x$ such "
+"that...\". The way to proceed is usually\n"
+"to suppose that we are given an $x$ with the given condition, and then prove "
+"something about it.\n"
+"\n"
+"The tactic `intro` allows for this. It takes a parameter, which will be the "
+"name given to the variable.\n"
+"\n"
+"It also works in statements of the form `P → Q` (we can think of it as "
+"equivalent to \"To each proof of $P$ we produce a proof of $Q$\").\n"
+"\n"
+"In the following lemma, we will need to apply the `intro` tactic twice to "
+"get to business.\n"
+"\n"
+"**Pro tip:** the `revert` tactic does exactly the opposite.\n"
+msgstr ""
+
+#: Tutorial World level 5
+msgid "For all $a$, if $a = 3$ then $a + 1 = 4$.\n"
+msgstr ""
+
+#: Tutorial World level 6
+msgid ""
+"## The `apply` tactic\n"
+"\n"
+"If we have a prove of the implication `h : P → Q` and we want to prove `Q`, "
+"then it is enough to prove `P`\n"
+"instead. In mathematics, we may say: \"To prove `Q` it suffices to prove "
+"`P`, since by `h` we know that\n"
+"it implies `Q`\". We then forget about `Q` and prove `P` instead.\n"
+"\n"
+"In *Lean*, this reasoning is realised by the `apply` tactic. If the goal is "
+"`Q` and we do `apply h,`,\n"
+"the goal gets changed to `P` instead. Note that it may well be that `P` is "
+"impossible to prove,\n"
+"so we might be able to backtrack if we `apply` the wrong statements...\n"
+msgstr ""
+
+#: Tutorial World level 6
+msgid "If $P$ implies $Q$ and we know $P$, then we can prove $Q$.\n"
+msgstr ""
+
+#: Tutorial World level 7
+msgid ""
+"## More on `apply`\n"
+"\n"
+"In the following example, `h` can be seen as a map\n"
+"$$h : \\mathbb{N} \\rightarrow \\\\{\\text{proofs}\\\\}$$\n"
+"which gives,\n"
+"for each natural number $x$, a proof of the fact that this particular $x$ "
+"satisfies $0 \\leq x^2$.\n"
+"\n"
+"This is why `apply` will work in the following example. *Lean* is smart "
+"enough to figure out which value of $x$\n"
+"needs to be plugged in to match the conclusion of `h` with the goal.\n"
+msgstr ""
+
+#: Tutorial World level 7
+msgid "If for all x we know $0 ≤ x^2$, then $0 ≤ 3^2$.\n"
+msgstr ""
+
+#: Tutorial World level 8
+msgid ""
+"## Some more on `apply`\n"
+"\n"
+"In the following example, `h` eats a number $x$ and a proof of the fact that "
+"$1\\leq x$, and gives\n"
+"a proof of the fact that $1\\leq x^2$. So if we `apply h`, *Lean* can figure "
+"out that $x$ must be set to\n"
+"$2$ (we could just as well type `apply h 2` to help him), but then it will "
+"want a proof of the fact that $1\\leq 2$. In this case, *Lean* has in its "
+"library\n"
+"a proof of\n"
+"this fact, called `one_le_two`, which we can `apply` after `h`.\n"
+msgstr ""
+
+#: Tutorial World level 8
+msgid ""
+"Knowing that for all x, if $1\\leq x$ then $1 ≤ x^2$, we can prove that $1 ≤ "
+"2^2$.\n"
+msgstr ""
+
+#: world_config
+msgid "More Tactics World"
+msgstr ""
+
+#: More Tactics World level 1
+msgid ""
+"## The `ring` tactic\n"
+"\n"
+"In this level we learn a high-level tactic, `ring`, which tries to prove a "
+"goal that involves\n"
+"an algebraic expression (in any ring). Let's see it in action, it's quite "
+"powerful!\n"
+msgstr ""
+
+#: More Tactics World level 1
+msgid ""
+"For every $x,y,z\\in \\mathbb{Z}$, we have\n"
+"$$(x+y)^3 - z^2 + 2xz - x^2 = x^3 + 3x^2y + 3xy^2 + y^3 - (z-x)^2$$.\n"
+msgstr ""
+
+#: More Tactics World level 2
+msgid ""
+"## The `use` tactic\n"
+"\n"
+"The following tactic works on goals of the form \"There exists $x$ such "
+"that...\". So if the goal starts\n"
+"with `∃`, to prove it you need to supply a value for $x$ and then prove that "
+"this value works. The first\n"
+"part will be done with the `use x` (replace `x` with an actual value) and "
+"then the goal will\n"
+"change into proving the required property of `x`.\n"
+msgstr ""
+
+#: More Tactics World level 2
+msgid "There is a solution to $x^2+5 = 14$ in $\\mathbb{N}$.\n"
+msgstr ""
+
+#: More Tactics World level 3
+msgid ""
+"## The `split` tactic\n"
+"\n"
+"Sometimes the goal is a conjunction of two statements. It may be directly a "
+"`∧` (it is typed with `\\and`),\n"
+"or it may be secretely a conjuntion, like an if and only if statement (since "
+"`↔` (type it with `\\iff`)\n"
+"means `→` and `←`). In those cases, the `split` tactic will produce two "
+"goals.\n"
+"\n"
+"If you don't do anything afterwards, you will be working on the first of the "
+"goals until you solve them,\n"
+"and then you will work on the second, and so on. It is nicer, however, to "
+"isolate them using `{}` to separate\n"
+"the different blocks. Below you can see an example (notice the commas!).\n"
+msgstr ""
+
+#: More Tactics World level 3
+msgid ""
+"For every $x,y\\in \\mathbb{Z}$, we have $(x+y)^2 = x^2 + 2xy + y^2$ and $(x-"
+"y)^2 = x^2 - 2xy + y^2$.\n"
+msgstr ""
+
+#: More Tactics World level 4
+msgid ""
+"## The `left` and `right` tactics\n"
+"\n"
+"In the previous lemma we learned how `split` makes progress on goals "
+"involving the conjunction `∧`.\n"
+"But what if the goal involves the *disjunction* `∨` (type it with `\\or`)? "
+"In this case,\n"
+"you first need to decide which is the side that you will try to prove. If "
+"it's the first (left)\n"
+"clause, the tactic `left` will change the goal to that one, if it's the "
+"second (right) clause,\n"
+"then well, you use `right`.\n"
+msgstr ""
+
+#: More Tactics World level 4
+msgid "If $a$ is $5$, then either it is $5$ or it is $7$.\n"
+msgstr ""
+
+#: More Tactics World level 5
+msgid ""
+"## The `have` tactic\n"
+"\n"
+"It is common in proofs to introduce auxiliary results, or claims, that help "
+"towards the goal. *Lean*\n"
+"allows for this kind of structure, by allowing you to insert new hypotheses "
+"(as long as you prove them,\n"
+"of course). This is done with the `have` tactic. The syntax is `have h : P,` "
+"where `h` is the name\n"
+"you want to give to the new hypothesis (check that it doesn't exist already "
+"or you will run intro problems)\n"
+"and `P` is a predicate like `x + 3 = 5`. You will get two goals, the first "
+"one will be to prove `P`,\n"
+"and the second one will be the original goal. In the second one, you will "
+"have `h` available.\n"
+"\n"
+"The next lemma cannot be proven by `ring` directly, since it involves an "
+"arbitrary exponent. There\n"
+"are tactics that work with these kind of equations, but we will do something "
+"easier. If we can prove\n"
+"first that $x+y=y+x$, then replacing that equality on the left-hand side "
+"will immediately finish the\n"
+"goal. So start with `have h : x + y = y + x,` and work from there.\n"
+msgstr ""
+
+#: More Tactics World level 5 6
+msgid "For all $n$, we have $(x+y)^n=(y+x)^n$.\n"
+msgstr ""
+
+#: More Tactics World level 6
+msgid ""
+"## The `rw show` trick\n"
+"\n"
+"This is more a trick than a tactic, but it's extremely useful. In the "
+"previous level\n"
+"we wanted to change $x+y$ into $y+x$ so we introduced a new hypothesis which "
+"we immediately\n"
+"`rw`rote. It seems a waste of effort, and we can shorten the proof using the "
+"`rw show A = B, by {...}`\n"
+"trick. Inside the `{...}` block you will have to prove the equality $A = B$, "
+"and then this will be\n"
+"rewritten in the goal. If you only need one tactic to prove $A=B$, you can "
+"remove the braces altogether.\n"
+"\n"
+"Try to prove this lemma with only one line starting with `rw show`.\n"
+msgstr ""
+
+#: More Tactics World level 7
+msgid ""
+"## The `cases` tactic\n"
+"\n"
+"We have talked before about how to deal with a conjunction `∧` in the goal. "
+"Sometimes,\n"
+"we may have a conjuntion in a hypothesis. In this case, the tactic `cases` "
+"breaks it into\n"
+"two new hypotheses. If we do `cases h with h1 h2` it will replace a "
+"hypothesis of\n"
+"the form `h : P ∧ Q` into `h1 : P` and `h2 : Q`.\n"
+"\n"
+"In the following lemma, a direct application of `assumption` won't work,\n"
+"because the goal is not *exactly* our assumption. We need to break `h` into "
+"two.\n"
+"\n"
+"**Pro tip:** If there is a double implication in `h`, then again we can use "
+"`cases h`\n"
+"to break it into two.\n"
+"\n"
+"**Pro tip 2:** We can refer to the two parts of `h` as `h.1` and `h.2`, so "
+"sometimes\n"
+"we won't need to break `h`...\n"
+"\n"
+msgstr ""
+
+#: More Tactics World level 7
+msgid "If $a=5$ and $b=3$, then $a=5$.\n"
+msgstr ""
+
+#: More Tactics World level 8
+msgid ""
+"## More on `cases`\n"
+"\n"
+"What if we have a *disjunction* in an hypothesis? In this case, the proof "
+"usually\n"
+"splits into two paths, one which assumes the left condition, and the other "
+"which assumes\n"
+"the right one. This is also achieved with the `cases` tactic. If `h : P ∨ "
+"Q`, then\n"
+"`cases h,` will produce two goals. In the first one, we will have `h : P` "
+"and in the second\n"
+"`h : Q`.\n"
+msgstr ""
+
+#: More Tactics World level 8
+msgid "If $a = 3$ or $a = -3$, then $a^2=9$.\n"
+msgstr ""
+
+#: More Tactics World level 9
+msgid ""
+"## Some more on `cases`\n"
+"\n"
+"There is another application of the swiss-army knife `cases`. If we have "
+"`h : ∃ x, P x`, then sometimes we want to have\n"
+"a witness for such an $x$. There are possibly many choices for such an $x$, "
+"but we\n"
+"will just get one. When one does `cases h with x hx`, there will be a new "
+"value `x`\n"
+"added to the list of \"hypotheses\", and the fact `hx : P x` for us to use.\n"
+msgstr ""
+
+#: More Tactics World level 9
+msgid "If we have $\\sqrt{2}$ then we also have $\\sqrt{8}$.\n"
+msgstr ""
+
+#: world_config
+msgid "Fibonacci World"
+msgstr ""
+
+#: Fibonacci World level 1
+msgid ""
+"## Divisibility\n"
+"\n"
+"In the quest for proving an interesting result about Fibonacci numbers\n"
+"it will be useful to have the following lemma, that allows to deduce\n"
+"the divibility of a sum from the divisibility of the summands.\n"
+"\n"
+"Recall that a natural number $d$ divides another one $n$ if there is some "
+"$t$\n"
+"such that $n = dt$. Below you have the *Lean* definition:\n"
+msgstr ""
+
+#: Fibonacci World level 1
+msgid "If $k$ divides $n$ and $m$, then $k$ divides $m + n$.\n"
+msgstr ""
+
+#: Fibonacci World level 2
+msgid ""
+"## A stronger induction principle\n"
+"\n"
+"We will will use the following basic induction principle, which is\n"
+"already provided to us by *Lean*, to prove a stronger induction principle,\n"
+"where the induction hypothesis is about the two previous values.\n"
+"\n"
+msgstr ""
+
+#: Fibonacci World level 2
+msgid ""
+"If $P$ is a predicate on natural numbers, to prove $P(n)$ for all $n$\n"
+"it suffices to show:\n"
+"* $P(0)$,\n"
+"* $P(1)$, and\n"
+"* $\\forall n, P(n) ∧ P (n+1)$ implies $P(n+2)$.\n"
+msgstr ""
+
+#: Fibonacci World level 3
+msgid ""
+"## The Fibonacci key lemma\n"
+"\n"
+"Below is the definition of the Fibonacci sequence. Notice that we specify\n"
+"what is $F_0$, what is $F_1$ and then we use a recurrence to define "
+"$F_{n+2}$.\n"
+msgstr ""
+
+#: Fibonacci World level 3
+msgid ""
+"It is useful to have the first few values available, as well as a rule\n"
+"to rewrite the recurrence. The proofs of the following lemmas are `by "
+"definition`,\n"
+"this is what `rfl` means at the end of the lines.\n"
+msgstr ""
+
+#: Fibonacci World level 3
+msgid ""
+"Armed with these tools, prove this important lemma on Fibonacci numbers. "
+"Remember\n"
+"the `induction'` lemma that you just proved!\n"
+msgstr ""
+
+#: Fibonacci World level 3
+msgid "For all $k$ and $n$, we have $F_{n+k+1} = F_k F_n + F_{k+1} F_{n+1}$.\n"
+msgstr ""
+
+#: Fibonacci World level 4
+msgid ""
+"## The Final Boss\n"
+"\n"
+"In this final level, you will prove that the Fibonacci number $F_k$ always "
+"divides $F_{kn}$,\n"
+"for arbitrary natural numbers $k$ and $n$. You will need to use plain "
+"induction (`induction`), as well\n"
+"as the key lemma `Fib_general` proved before.\n"
+msgstr ""
+
+#: Fibonacci World level 4
+msgid "For all $k$ and $n$, $F_{k}$ divides $F_{kn}$.\n"
+msgstr ""
+
+#: world_config
+msgid "Subgroup World"
+msgstr ""
+
+#: Subgroup World level 1
+msgid ""
+"## Basic definition\n"
+"\n"
+"Below we have one possible notion of being a subgroup. We will want to prove "
+"that\n"
+"this definition matches the more natural one, and we will do so in this and "
+"the next levels.\n"
+"\n"
+"Throughout, you will find very useful the `group` tactic, which works like "
+"the powerful `ring`\n"
+"tactic but with equalities involving elements of a group.\n"
+"\n"
+"You will need to type inverses, which are written using a superindex. You "
+"type superindices\n"
+"by pressing `\\^` and then the number. For instance, if you type `\\^-1` you "
+"will see how the `-1`\n"
+"appears as a superindex.\n"
+msgstr ""
+
+#: Subgroup World level 1
+msgid "If $H\\leq G$, then $1 \\in H$.\n"
+msgstr ""
+
+#: Subgroup World level 2
+msgid ""
+"## The inverse of an element is in the group\n"
+"\n"
+"In this easy lemma you have to prove that the inverse of an element in a "
+"subgroup is in the\n"
+"subgroup as well.\n"
+msgstr ""
+
+#: Subgroup World level 2
+msgid "If $H\\leq G$, and $x \\in H$, then $x^{-1} \\in H$.\n"
+msgstr ""
+
+#: Subgroup World level 3
+msgid ""
+"## The inverse of an element is in the group (II)\n"
+"\n"
+"The following variation is useful because since it is an `↔` statement, it "
+"can be `rw`ritten.\n"
+msgstr ""
+
+#: Subgroup World level 3
+msgid "If $H\\leq G$, then $x \\in H$ if and only if $x^{-1} \\in H$.\n"
+msgstr ""
+
+#: Subgroup World level 4
+msgid ""
+"## Closed under product\n"
+"\n"
+"Here you prove finally that the product of elements in a subgroup stays in "
+"the subgroup.\n"
+msgstr ""
+
+#: Subgroup World level 4
+msgid "If $H\\leq G$, and $x, y \\in H$, then $x y \\in H$.\n"
+msgstr ""
+
+#: world_config
+msgid "Normalizer World"
+msgstr ""
+
+#: Normalizer World level 1
+msgid ""
+"## The normalizer subgroup\n"
+"\n"
+"In this level you need to prove that the normalizer of any subset $A "
+"\\subseteq G$ is a subgroup of $G$.\n"
+"\n"
+"Below you can see the definition of the normalizer, as a certain subset of "
+"$G$. You can use `normalizer_mem`\n"
+"to `rw`rite the definition, if needed.\n"
+msgstr ""
+
+#: Normalizer World level 1
+msgid "The normalizer $N_G(A)$ is a subgroup of $G$.\n"
+msgstr ""
+
+#: Normalizer World level 2
+msgid "If $H \\leq G$, then the normalizer $N_G(H)$ is a normal subgroup.\n"
+msgstr ""
+
+#: Normalizer World level 3
+msgid "If $H \\leq K$ is a normal subgroup, then $K \\leq N_G(H)$.\n"
+msgstr ""
+
+#: world_config
+msgid "Centralizer World"
+msgstr ""
+
+#: Centralizer World level 1
+msgid ""
+"## The centralizer\n"
+"\n"
+"In this world we prove two basic facts about centralizers. Here\n"
+"is the definition of the centralizer of a subset $A$ of a given group $G$:\n"
+msgstr ""
+
+#: Centralizer World level 1
+msgid "We can use the following lemma to rewrite using the definition.\n"
+msgstr ""
+
+#: Centralizer World level 1
+msgid ""
+"The first goal is to prove that the centralizer of any set\n"
+"is a subgroup.\n"
+msgstr ""
+
+#: Centralizer World level 1
+msgid "The centralizer $C_G(A)$ is a subgroup of $G$.\n"
+msgstr ""
+
+#: Centralizer World level 2
+msgid ""
+"## The Final Boss\n"
+"\n"
+"In this very final level we will prove that $C_G(A)$ is a normal subgroup\n"
+"of $N_G(A)$. This takes a bit of effort, but hopefully the tools\n"
+"that you have learned all along the way will serve you well in this\n"
+"final battle. Good luck!\n"
+msgstr ""
+
+#: Centralizer World level 2
+msgid ""
+"The centralizer $C_G(A)$ is a normal subgroup of the normalizer $N_G(A)$.\n"
+msgstr ""

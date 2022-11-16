@@ -1,0 +1,56 @@
+name = "TheFundamentalGame"
+version = "1.0.1"
+extra_files = "extras"
+intro = "src/intro.lean"
+
+[[worlds]]
+name = "Tutorial World"
+id = 1
+levels = [  "src/tutorial_world/*.lean" ]
+
+[[worlds]]
+name = "More Tactics World"
+id = 2
+parents = [1]
+levels = [  "src/tactics_world/*.lean" ]
+
+
+[[worlds]]
+name = "Fibonacci World"
+id = 3
+parents = [2]
+levels = [
+"src/fibonacci_world/divides.lean",
+"src/fibonacci_world/induction.lean",
+"src/fibonacci_world/key.lean",
+"src/fibonacci_world/fibonacci.lean" ]
+
+[[worlds]]
+name = "Subgroup World"
+id = 4
+parents = [2]
+levels = [
+"src/subgroup_world/subgroup_one.lean",
+"src/subgroup_world/subgroup_inv.lean",
+"src/subgroup_world/subgroup_inv_bis.lean",
+"src/subgroup_world/subgroup_mul.lean",
+ ]
+
+[[worlds]]
+name = "Normalizer World"
+id = 5
+parents = [4]
+levels = [
+  "src/normalizer_world/normalizer_is_subgroup.lean",
+"src/normalizer_world/normalizer_is_normal.lean",
+"src/normalizer_world/normalizer_is_minimal.lean",
+ ]
+
+[[worlds]]
+name = "Centralizer World"
+id = 6
+parents = [5]
+levels = [
+"src/centralizer_world/centralizer_is_subgroup.lean",
+"src/centralizer_world/centralizer_normalizer.lean",
+ ]
