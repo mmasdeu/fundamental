@@ -20,7 +20,8 @@ name = "Set Theory World"
 id = 7
 parents = [2]
 levels = [
-  "src/set_theory_world/subset_transitive.lean"
+  "src/set_theory_world/subset_transitive.lean",
+  "src/set_theory_world/distributive.lean"
 ]
 
 [[worlds]]
