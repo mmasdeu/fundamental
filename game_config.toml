@@ -16,6 +16,14 @@ levels = [  "src/tactics_world/*.lean" ]
 
 
 [[worlds]]
+name = "Set Theory World"
+id = 7
+parents = [2]
+levels = [
+  "src/set_theory_world/subset_transitive.lean"
+]
+
+[[worlds]]
 name = "Fibonacci World"
 id = 3
 parents = [2]
