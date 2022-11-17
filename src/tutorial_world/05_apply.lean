@@ -4,7 +4,7 @@ open function nat -- hide
 /-
 ## The `apply` tactic
 
-If we have a prove of the implication `h : P → Q` and we want to prove `Q`, then it is enough to prove `P`
+If we have a proof of the implication `h : P → Q` and we want to prove `Q`, then it is enough to prove `P`
 instead. In mathematics, we may say: "To prove `Q` it suffices to prove `P`, since by `h` we know that
 it implies `Q`". We then forget about `Q` and prove `P` instead.
 
