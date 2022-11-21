@@ -20,4 +20,7 @@ lemma l5 (P Q : Prop) (h : P → Q) (hp : P) : Q :=
 begin
   apply h,
   assumption,
+
+
+  
 end

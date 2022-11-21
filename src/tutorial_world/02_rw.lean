@@ -22,4 +22,6 @@ lemma l2 (a b c : ℕ) (h1 : a = b + c) (h2 : a = 3): b + c = 3:=
 begin
   rw ← h1,
   assumption,
+
+  
 end

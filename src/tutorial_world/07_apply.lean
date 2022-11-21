@@ -18,4 +18,7 @@ lemma l7 (h : ∀ x, 1 ≤ x → 1 ≤ x^2) : 1 ≤ 2^2:=
 begin
   apply h,
   apply one_le_two,
+
+
+  
 end

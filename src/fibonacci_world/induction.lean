@@ -11,7 +11,7 @@ where the induction hypothesis is about the two previous values.
 -/
 
 variables {P : ℕ → Prop} -- hide
-lemma induction (n : ℕ) (h0 : P 0) (h : ∀ n, P n → P (n+1)) : P n
+lemma induction  (n : ℕ) (h0 : P 0) (h : ∀ n, P n → P (n+1)) : P n
 := nat.rec h0 h n -- hide
 
 /- Axiom : induction
@@ -26,8 +26,8 @@ it suffices to show:
 * $P(1)$, and
 * $\forall n, P(n) ∧ P (n+1)$ implies $P(n+2)$.
 -/
-lemma induction' {P : ℕ → Prop} (n : ℕ) (h0 : P 0) (h1 : P 1)
-(h : ∀ n, (P n → P (n+1) → P (n+2))) : P n :=
+lemma induction' {P : ℕ → Prop} (n : ℕ) 
+(h : ∀ n, (P n → P (n+1) → P (n+2))) (h0 : P 0) (h1 : P 1) : P n :=
 begin
   have h : ∀ n, P n ∧ P (n+1),
   {
@@ -57,6 +57,9 @@ begin
     cases h n,
     assumption,
   },
+
+
+
 
 
 

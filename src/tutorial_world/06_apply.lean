@@ -19,4 +19,6 @@ If for all x we know $0 ≤ x^2$, then $0 ≤ 3^2$.
 lemma l6 (h : ∀ x, 0 ≤ x^2) : 0 ≤ 3^2:=
 begin
   apply h,
+
+  
 end

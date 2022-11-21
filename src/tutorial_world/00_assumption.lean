@@ -25,4 +25,6 @@ If $a$ is $3$ and $b$ is $4$ and $c$ is $5$, then $b$ is $4$.
 lemma l0 (a b c : ℕ) (ha : a = 3) (hb : b = 4) (hc : c = 5) : b = 4 :=
 begin
   assumption,
+
+  
 end
