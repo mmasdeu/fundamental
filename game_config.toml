@@ -23,6 +23,7 @@ levels = [
   "src/set_theory_world/subset_transitive.lean",
   "src/set_theory_world/distributive.lean",
   "src/set_theory_world/image_tutorial.lean",
+  "src/set_theory_world/image_union.lean"
 ]
 
 [[worlds]]
