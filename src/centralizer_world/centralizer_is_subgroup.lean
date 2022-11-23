@@ -1,4 +1,4 @@
-import normalizer_world.normalizer_is_minimal -- hide
+import normalizer_world.normalizer_is_maximal -- hide
 
 variables {G : Type} [group G] -- hide
 

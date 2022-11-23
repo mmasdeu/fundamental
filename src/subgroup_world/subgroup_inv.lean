@@ -11,9 +11,9 @@ subgroup as well.
 /- Lemma:
 If $H\leq G$, and $x \in H$, then $x^{-1} \in H$.
 -/
-lemma subgroup.inv_mem' [h : subgroup H] {x : G} (hg : x ∈ H) : x⁻¹ ∈ H :=
+lemma subgroup.inv_mem' [h : subgroup H] {x : G} (hx : x ∈ H) : x⁻¹ ∈ H :=
 begin
-  have h2 := h.2 (1 : G) x subgroup.one_mem hg,
+  have h2 := h.2 (1 : G) x subgroup.one_mem hx,
   rw show (x⁻¹ = 1 * x⁻¹), by group,
   assumption,
 

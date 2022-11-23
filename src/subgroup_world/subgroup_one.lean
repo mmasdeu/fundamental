@@ -9,9 +9,8 @@ this definition matches the more natural one, and we will do so in this and the 
 Throughout, you will find very useful the `group` tactic, which works like the powerful `ring`
 tactic but with equalities involving elements of a group.
 
-You will need to type inverses, which are written using a superindex. You type superindices
-by pressing `\^` and then the number. For instance, if you type `\^-1` you will see how the `-1`
-appears as a superindex.
+You will need to type inverses, which are written using a superindex "-1". You type it as
+`\-1`, and you will see how the `-1` appears as a superindex.
 -/
 
 variables {G : Type} [group G] {H : set G} -- hide

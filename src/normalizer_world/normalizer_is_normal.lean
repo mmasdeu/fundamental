@@ -9,7 +9,7 @@ N ⊆ H ∧ ∀ g n, g ∈ H → n ∈ N → g⁻¹ * n * g ∈ N
 -/
 
 /- Lemma: no-side-bar
-If $H \leq G$, then the normalizer $N_G(H)$ is a normal subgroup.
+If $H \leq G$, then $H$ is a normal subgroup of the normalizer $N_G(H)$.
 -/
 lemma sn2 (H : set G) [subgroup H] : is_normal H (normalizer H) :=
 begin

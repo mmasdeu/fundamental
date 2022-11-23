@@ -43,7 +43,7 @@ parents = [4]
 levels = [
   "src/normalizer_world/normalizer_is_subgroup.lean",
 "src/normalizer_world/normalizer_is_normal.lean",
-"src/normalizer_world/normalizer_is_minimal.lean",
+"src/normalizer_world/normalizer_is_maximal.lean",
  ]
 
 [[worlds]]

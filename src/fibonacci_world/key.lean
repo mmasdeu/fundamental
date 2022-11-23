@@ -34,6 +34,20 @@ lemma Fib_general (n k : ℕ) : Fib (n + k + 1) = (Fib k) * (Fib n) + (Fib (k+1)
 begin
   apply induction' k,
   {
+  intro k,
+  intro h0,
+  intro h1,
+  rw show n+(k+2)+1 = (n+k+1)+2, by ring,
+  rw Fib_def,
+  rw show n + k + 1 + 1 = n + (k+1) + 1, by ring,
+  rw h0,
+  rw h1,
+  rw Fib_def,
+  rw Fib_def,
+  rw Fib_def,
+  ring,
+  },
+  {
     rw Fib0,
     rw Fib1,
     ring,
@@ -44,20 +58,7 @@ begin
     rw Fib_def,
     ring,
   },
-  {
-    intro k,
-    intro h0,
-    intro h1,
-    rw show n+(k+2)+1 = (n+k+1)+2, by ring,
-    rw Fib_def,
-    rw show n + k + 1 + 1 = n + (k+1) + 1, by ring,
-    rw h0,
-    rw h1,
-    rw Fib_def,
-    rw Fib_def,
-    rw Fib_def,
-    ring,
-  }
+
 
 
 
