@@ -40,8 +40,7 @@ begin
     {
       assumption,
     },
-    intro n,
-    intro hd,
+    intros n hd,
     cases hd,
     split,
     {

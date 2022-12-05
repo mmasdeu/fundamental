@@ -14,6 +14,8 @@ It also works in statements of the form `P → Q` (we can think of it as equival
 In the following lemma, we will need to apply the `intro` tactic twice to get to business.
 
 **Pro tip:** the `revert` tactic does exactly the opposite.
+
+**Pro tip bis:** `intros h1 h2 h3,` is the same as `intro h1, intro h2, intro h3,`.
 -/
 
 /- Lemma : no-side-bar

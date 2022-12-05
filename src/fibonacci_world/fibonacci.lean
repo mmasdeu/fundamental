@@ -21,15 +21,12 @@ begin
   {
     apply induction k,
     {
-      intro n,
-      intro hn,
+      intros n hn,
       rw show 0 * (n+1) = 0, by ring,
     },
     {
-      intro r,
-      intro hr,
-      intro n,
-      intro hn,
+      intros r hr n hn,
+      cases hn with d hd,
       rw show (r + 1)*(n+1) = (r+1) * n + r + 1, by ring,
       rw Fib_general,
       apply divides_add,
@@ -37,13 +34,15 @@ begin
         use Fib ((r+1) * n + 1),
       },
       {
-        cases hn with d hd,
         use d * Fib r,
         rw hd,
         ring,
       }
     }
   }
+
+
+
 
 
 

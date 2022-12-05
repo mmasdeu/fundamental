@@ -6,6 +6,11 @@ import tactic -- hide
 Below we have one possible notion of being a subgroup. We will want to prove that
 this definition matches the more natural one, and we will do so in this and the next levels.
 
+On the left you will see a tab with theorems that you can use in your proofs. In this level
+you will need to use `nonempty_of_subgroup` and `mul_inv_of_subgroup`, which follow
+directly from the definition of subgroup and are in fact the way that we will be able
+to access the definition.
+
 Throughout, you will find very useful the `group` tactic, which works like the powerful `ring`
 tactic but with equalities involving elements of a group.
 
@@ -22,13 +27,15 @@ def subgroup (X : set G) := X.nonempty ∧ (∀ x y, x ∈ X → y ∈ X → x *
 X.nonempty ∧ (∀ x y, x ∈ X → y ∈ X → x * y⁻¹ ∈ X)
 -/
 
-lemma nonempty_of_subgroup (X : set G) [h : subgroup X] : ∃ x, x ∈ X := h.1 -- hide
+lemma nonempty_of_subgroup (X : set G) [h : subgroup X] : ∃ x, x ∈ X
+:= h.1 -- hide
 
 /- Axiom : nonempty_of_subgroup (X : set G) [subgroup X]
 ∃ x, x ∈ X
 -/
 
-lemma mul_inv_of_subgroup {X : set G} [h : subgroup X] {x y : G} (hx : x ∈ X) (hy : y ∈ X) : x * y⁻¹ ∈ X := h.2 x y hx hy -- hide
+lemma mul_inv_of_subgroup {X : set G} [h : subgroup X] {x y : G} (hx : x ∈ X) (hy : y ∈ X) : x * y⁻¹ ∈ X
+:= h.2 x y hx hy -- hide
 
 /- Axiom : mul_inv_of_subgroup {X : set G} [h : subgroup X] {x y : G}
 (hx : x ∈ X) (hy : y ∈ X) :

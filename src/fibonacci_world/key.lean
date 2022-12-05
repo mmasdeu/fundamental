@@ -17,9 +17,13 @@ It is useful to have the first few values available, as well as a rule
 to rewrite the recurrence. The proofs of the following lemmas are `by definition`,
 this is what `rfl` means at the end of the lines.
 -/
+@[simp] -- hide
 lemma Fib0 : Fib 0 = 0 := rfl
+@[simp] -- hide
 lemma Fib1 : Fib 1 = 1 := rfl
+@[simp] -- hide
 lemma Fib2 : Fib 2 = 1 := rfl
+@[simp] -- hide
 lemma Fib_def (n : ℕ) : Fib (n+2) = Fib n + Fib (n+1) := rfl
 
 /-
@@ -30,13 +34,12 @@ the `induction'` lemma that you just proved!
 /- Lemma :
 For all $k$ and $n$, we have $F_{n+k+1} = F_k F_n + F_{k+1} F_{n+1}$.
 -/
+@[simp] -- hide
 lemma Fib_general (n k : ℕ) : Fib (n + k + 1) = (Fib k) * (Fib n) + (Fib (k+1)) * (Fib (n+1)) :=
 begin
   apply induction' k,
   {
-  intro k,
-  intro h0,
-  intro h1,
+  intros k h0 h1,
   rw show n+(k+2)+1 = (n+k+1)+2, by ring,
   rw Fib_def,
   rw show n + k + 1 + 1 = n + (k+1) + 1, by ring,
@@ -58,6 +61,8 @@ begin
     rw Fib_def,
     ring,
   },
+
+
 
 
 

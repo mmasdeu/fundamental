@@ -17,8 +17,7 @@ begin
   rw normalizer,
   split,
   {
-    intros h hH,
-    intro a,
+    intros h hH a,
     split,
     {
       intro ha,
@@ -45,14 +44,14 @@ begin
     }
   },
   {
-    intros h n,
-    intro hG,
-    intro nh,
-    specialize hG (h⁻¹ * n * h),
-    rw hG,
+    intros h n hG nh,
+    rw hG (h⁻¹ * n * h),
     rw show h * (h⁻¹ * n * h) * h⁻¹ = n, by group,
     assumption,
   }
+
+
+
 
 
 
