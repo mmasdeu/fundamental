@@ -14,28 +14,30 @@ For all $k$ and $n$, $F_{k}$ divides $F_{kn}$.
 lemma final_boss (k n : ℕ) : Fib k ∣ Fib (k*n) :=
 begin
   apply induction n,
-  {
+  { -- simp works
     use 0,
     ring,
   },
   {
     apply induction k,
-    {
+    { -- simp works
       intros n hn,
       rw show 0 * (n+1) = 0, by ring,
     },
     {
-      intros r hr n hn,
-      cases hn with d hd,
-      rw show (r + 1)*(n+1) = (r+1) * n + r + 1, by ring,
+      intros r hr m hm,
+      clear hr,
+      rw show (r + 1)*(m + 1) = (r + 1) * m + r + 1, by ring,
       rw Fib_general,
       apply divides_add,
       {
-        use Fib ((r+1) * n + 1),
+        apply divides_mul_left,
       },
       {
-        use d * Fib r,
+        cases hm with d hd,
         rw hd,
+        apply divides_mul_right,
+        use d * Fib r,
         ring,
       }
     }

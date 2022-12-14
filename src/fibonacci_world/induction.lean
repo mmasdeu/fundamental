@@ -1,5 +1,5 @@
 import fibonacci_world.divides  -- hide
-open function set
+open function set -- hide
 
 /-
 ## A stronger induction principle

@@ -1,5 +1,5 @@
 name = "TheFundamentalGame"
-version = "1.0.1"
+version = "1.1.0"
 extra_files = "extras"
 intro = "src/intro.lean"
 
@@ -20,6 +20,7 @@ name = "Fibonacci World"
 id = 3
 parents = [2]
 levels = [
+"src/fibonacci_world/divides_mul.lean",
 "src/fibonacci_world/divides.lean",
 "src/fibonacci_world/induction.lean",
 "src/fibonacci_world/key.lean",

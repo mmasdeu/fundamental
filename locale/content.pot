@@ -1,8 +1,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0.1\n"
-"POT-Creation-Date: 2022-12-14 11:24:02.654665\n"
+"Project-Id-Version: 1.1.0\n"
+"POT-Creation-Date: 2022-12-14 13:20:58.552393\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 
@@ -105,10 +105,6 @@ msgstr ""
 msgid "If $a$ is $3$ and $b$ is $4$ and $c$ is $5$, then $b$ is $4$.\n"
 msgstr ""
 
-#: Tutorial World level 2 3
-msgid "← : \\l\n"
-msgstr ""
-
 #: Tutorial World level 2
 msgid ""
 "## The `rw` tactic\n"
@@ -150,6 +146,10 @@ msgid ""
 "`a` is a very complicated expression. This can be closed with the `refl` "
 "tactic (it means\n"
 "*reflexivity*).\n"
+msgstr ""
+
+#: Tutorial World level 3
+msgid "← : \\l\n"
 msgstr ""
 
 #: Tutorial World level 3
@@ -494,11 +494,7 @@ msgstr ""
 
 #: Fibonacci World level 1
 msgid ""
-"## Divisibility\n"
-"\n"
-"In the quest for proving an interesting result about Fibonacci numbers\n"
-"it will be useful to have the following lemma, that allows to deduce\n"
-"the divibility of a sum from the divisibility of the summands.\n"
+"## Divisibility of an obvious multiple\n"
 "\n"
 "Recall that a natural number $d$ divides another one $n$ if there is some "
 "$t$\n"
@@ -506,10 +502,29 @@ msgid ""
 msgstr ""
 
 #: Fibonacci World level 1
-msgid "If $k$ divides $n$ and $m$, then $k$ divides $m + n$.\n"
+msgid ""
+"The following useful lemma just says that any natural number divides\n"
+"a multiple of itself, and its proof should just be one or two lines.\n"
+msgstr ""
+
+#: Fibonacci World level 1
+msgid "Every natural number $k$ divides $k \\cdot r$\n"
 msgstr ""
 
 #: Fibonacci World level 2
+msgid ""
+"## Divisibility of a sum\n"
+"\n"
+"In the quest for proving an interesting result about Fibonacci numbers\n"
+"it will be useful to have the following lemma, that allows to deduce\n"
+"the divibility of a sum from the divisibility of the summands.\n"
+msgstr ""
+
+#: Fibonacci World level 2
+msgid "If $k$ divides $n$ and $m$, then $k$ divides $m + n$.\n"
+msgstr ""
+
+#: Fibonacci World level 3
 msgid ""
 "## A stronger induction principle\n"
 "\n"
@@ -519,7 +534,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: Fibonacci World level 2
+#: Fibonacci World level 3
 msgid ""
 "If $P$ is a predicate on natural numbers, to prove $P(n)$ for all $n$\n"
 "it suffices to show:\n"
@@ -528,7 +543,7 @@ msgid ""
 "* $\\forall n, P(n) ∧ P (n+1)$ implies $P(n+2)$.\n"
 msgstr ""
 
-#: Fibonacci World level 3
+#: Fibonacci World level 4
 msgid ""
 "## The Fibonacci key lemma\n"
 "\n"
@@ -537,7 +552,7 @@ msgid ""
 "$F_{n+2}$.\n"
 msgstr ""
 
-#: Fibonacci World level 3
+#: Fibonacci World level 4
 msgid ""
 "It is useful to have the first few values available, as well as a rule\n"
 "to rewrite the recurrence. The proofs of the following lemmas are `by "
@@ -545,18 +560,18 @@ msgid ""
 "this is what `rfl` means at the end of the lines.\n"
 msgstr ""
 
-#: Fibonacci World level 3
+#: Fibonacci World level 4
 msgid ""
 "Armed with these tools, prove this important lemma on Fibonacci numbers. "
 "Remember\n"
 "the `induction'` lemma that you just proved!\n"
 msgstr ""
 
-#: Fibonacci World level 3
+#: Fibonacci World level 4
 msgid "For all $k$ and $n$, we have $F_{n+k+1} = F_k F_n + F_{k+1} F_{n+1}$.\n"
 msgstr ""
 
-#: Fibonacci World level 4
+#: Fibonacci World level 5
 msgid ""
 "## The Final Boss\n"
 "\n"
@@ -567,7 +582,7 @@ msgid ""
 "as the key lemma `Fib_general` proved before.\n"
 msgstr ""
 
-#: Fibonacci World level 4
+#: Fibonacci World level 5
 msgid "For all $k$ and $n$, $F_{k}$ divides $F_{kn}$.\n"
 msgstr ""
 

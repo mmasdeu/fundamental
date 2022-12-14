@@ -31,10 +31,10 @@ Armed with these tools, prove this important lemma on Fibonacci numbers. Remembe
 the `induction'` lemma that you just proved!
 -/
 
+@[simp] -- hide
 /- Lemma :
 For all $k$ and $n$, we have $F_{n+k+1} = F_k F_n + F_{k+1} F_{n+1}$.
 -/
-@[simp] -- hide
 lemma Fib_general (n k : ℕ) : Fib (n + k + 1) = (Fib k) * (Fib n) + (Fib (k+1)) * (Fib (n+1)) :=
 begin
   apply induction' k,
@@ -43,6 +43,7 @@ begin
   rw show n+(k+2)+1 = (n+k+1)+2, by ring,
   rw Fib_def,
   rw show n + k + 1 + 1 = n + (k+1) + 1, by ring,
+  -- simp [h0, h1], ring -- works
   rw h0,
   rw h1,
   rw Fib_def,
@@ -50,12 +51,12 @@ begin
   rw Fib_def,
   ring,
   },
-  {
+  { -- simp works
     rw Fib0,
     rw Fib1,
     ring,
   },
-  {
+  { -- simp works
     rw Fib1,
     rw Fib2,
     rw Fib_def,
