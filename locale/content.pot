@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0.1\n"
-"POT-Creation-Date: 2022-11-23 16:58:19.101540\n"
+"POT-Creation-Date: 2022-12-14 11:24:02.654665\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 
@@ -98,7 +98,15 @@ msgid ""
 msgstr ""
 
 #: Tutorial World level 1
+msgid "ℕ : \\N\n"
+msgstr ""
+
+#: Tutorial World level 1
 msgid "If $a$ is $3$ and $b$ is $4$ and $c$ is $5$, then $b$ is $4$.\n"
+msgstr ""
+
+#: Tutorial World level 2 3
+msgid "← : \\l\n"
 msgstr ""
 
 #: Tutorial World level 2
@@ -184,6 +192,17 @@ msgid ""
 "get to business.\n"
 "\n"
 "**Pro tip:** the `revert` tactic does exactly the opposite.\n"
+"\n"
+"**Pro tip bis:** `intros h1 h2 h3,` is the same as `intro h1, intro h2, "
+"intro h3,`.\n"
+msgstr ""
+
+#: Tutorial World level 5
+msgid "∀ : \\forall\n"
+msgstr ""
+
+#: Tutorial World level 5
+msgid "→ : \\imp\n"
 msgstr ""
 
 #: Tutorial World level 5
@@ -227,6 +246,10 @@ msgid ""
 msgstr ""
 
 #: Tutorial World level 7
+msgid "≤ : \\leq\n"
+msgstr ""
+
+#: Tutorial World level 7
 msgid "If for all x we know $0 ≤ x^2$, then $0 ≤ 3^2$.\n"
 msgstr ""
 
@@ -266,6 +289,10 @@ msgid ""
 msgstr ""
 
 #: More Tactics World level 1
+msgid "ℤ : \\Z\n"
+msgstr ""
+
+#: More Tactics World level 1
 msgid ""
 "For every $x,y,z\\in \\mathbb{Z}$, we have\n"
 "$$(x+y)^3 - z^2 + 2xz - x^2 = x^3 + 3x^2y + 3xy^2 + y^3 - (z-x)^2$$.\n"
@@ -282,6 +309,10 @@ msgid ""
 "part will be done with the `use x` (replace `x` with an actual value) and "
 "then the goal will\n"
 "change into proving the required property of `x`.\n"
+msgstr ""
+
+#: More Tactics World level 2
+msgid "∃ : \\exists\n"
 msgstr ""
 
 #: More Tactics World level 2
@@ -307,6 +338,10 @@ msgid ""
 msgstr ""
 
 #: More Tactics World level 3
+msgid "∧ : \\and\n"
+msgstr ""
+
+#: More Tactics World level 3
 msgid ""
 "For every $x,y\\in \\mathbb{Z}$, we have $(x+y)^2 = x^2 + 2xy + y^2$ and $(x-"
 "y)^2 = x^2 - 2xy + y^2$.\n"
@@ -325,6 +360,10 @@ msgid ""
 "clause, the tactic `left` will change the goal to that one, if it's the "
 "second (right) clause,\n"
 "then well, you use `right`.\n"
+msgstr ""
+
+#: More Tactics World level 4
+msgid "∨ : \\or\n"
 msgstr ""
 
 #: More Tactics World level 4
@@ -355,6 +394,10 @@ msgid ""
 "first that $x+y=y+x$, then replacing that equality on the left-hand side "
 "will immediately finish the\n"
 "goal. So start with `have h : x + y = y + x,` and work from there.\n"
+msgstr ""
+
+#: More Tactics World level 5
+msgid "ℝ : \\R\n"
 msgstr ""
 
 #: More Tactics World level 5 6
@@ -541,6 +584,14 @@ msgid ""
 "this definition matches the more natural one, and we will do so in this and "
 "the next levels.\n"
 "\n"
+"On the left you will see a tab with theorems that you can use in your "
+"proofs. In this level\n"
+"you will need to use `nonempty_of_subgroup` and `mul_inv_of_subgroup`, which "
+"follow\n"
+"directly from the definition of subgroup and are in fact the way that we "
+"will be able\n"
+"to access the definition.\n"
+"\n"
 "Throughout, you will find very useful the `group` tactic, which works like "
 "the powerful `ring`\n"
 "tactic but with equalities involving elements of a group.\n"
@@ -573,6 +624,18 @@ msgid ""
 "\n"
 "The following variation is useful because since it is an `↔` statement, it "
 "can be `rw`ritten.\n"
+msgstr ""
+
+#: Subgroup World level 3
+msgid "↔ : \\iff\n"
+msgstr ""
+
+#: Subgroup World level 3
+msgid "∈ : \\in\n"
+msgstr ""
+
+#: Subgroup World level 3
+msgid "x⁻¹ : x\\-1\n"
 msgstr ""
 
 #: Subgroup World level 3
@@ -614,6 +677,10 @@ msgstr ""
 #: Normalizer World level 2
 msgid ""
 "If $H \\leq G$, then $H$ is a normal subgroup of the normalizer $N_G(H)$.\n"
+msgstr ""
+
+#: Normalizer World level 3
+msgid "⊆ : \\subseteq\n"
 msgstr ""
 
 #: Normalizer World level 3

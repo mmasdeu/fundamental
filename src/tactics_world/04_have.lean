@@ -16,7 +16,9 @@ are tactics that work with these kind of equations, but we will do something eas
 first that $x+y=y+x$, then replacing that equality on the left-hand side will immediately finish the
 goal. So start with `have h : x + y = y + x,` and work from there.
 -/
-
+/- Symbol:
+ℝ : \R
+-/
 /- Lemma : no-side-bar
 For all $n$, we have $(x+y)^n=(y+x)^n$.
 -/

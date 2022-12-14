@@ -10,6 +10,9 @@ part will be done with the `use x` (replace `x` with an actual value) and then t
 change into proving the required property of `x`.
 -/
 
+/- Symbol:
+∃ : \exists
+-/
 /- Lemma : no-side-bar
 There is a solution to $x^2+5 = 14$ in $\mathbb{N}$.
 -/

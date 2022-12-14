@@ -15,6 +15,9 @@ $b = a$ (and hence do `rw h.symm`) or use `rw ← h` (type `←` with \l). Try i
 *reflexivity*).
 -/
 
+/- Symbol:
+← : \l
+-/
 /- Lemma : no-side-bar
 If $a = b + c$ and $a = 3$, then $b + c = 3$.
 -/

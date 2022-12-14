@@ -22,6 +22,10 @@ begin
     assumption,
   }
 end
+
+/- Symbol :
+∧ : \and
+-/
 /- Lemma : no-side-bar
 For every $x,y\in \mathbb{Z}$, we have $(x+y)^2 = x^2 + 2xy + y^2$ and $(x-y)^2 = x^2 - 2xy + y^2$.
 -/

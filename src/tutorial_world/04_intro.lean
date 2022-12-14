@@ -17,7 +17,10 @@ In the following lemma, we will need to apply the `intro` tactic twice to get to
 
 **Pro tip bis:** `intros h1 h2 h3,` is the same as `intro h1, intro h2, intro h3,`.
 -/
-
+/- Symbol:
+∀ : \forall
+→ : \imp
+-/
 /- Lemma : no-side-bar
 For all $a$, if $a = 3$ then $a + 1 = 4$.
 -/

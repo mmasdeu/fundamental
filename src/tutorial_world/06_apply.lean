@@ -12,7 +12,9 @@ for each natural number $x$, a proof of the fact that this particular $x$ satisf
 This is why `apply` will work in the following example. *Lean* is smart enough to figure out which value of $x$
 needs to be plugged in to match the conclusion of `h` with the goal.
 -/
-
+/- Symbol: 
+≤ : \leq
+-/
 /- Lemma : no-side-bar
 If for all x we know $0 ≤ x^2$, then $0 ≤ 3^2$.
 -/

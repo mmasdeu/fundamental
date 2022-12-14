@@ -7,7 +7,9 @@ you first need to decide which is the side that you will try to prove. If it's t
 clause, the tactic `left` will change the goal to that one, if it's the second (right) clause,
 then well, you use `right`.
 -/
-
+/- Symbol:
+∨ : \or
+-/
 /- Lemma : no-side-bar
 If $a$ is $5$, then either it is $5$ or it is $7$.
 -/

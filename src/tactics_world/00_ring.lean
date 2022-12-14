@@ -5,7 +5,9 @@ import data.real.basic -- hide
 In this level we learn a high-level tactic, `ring`, which tries to prove a goal that involves
 an algebraic expression (in any ring). Let's see it in action, it's quite powerful!
 -/
-
+/- Symbol:
+ℤ : \Z
+-/
 /- Lemma : no-side-bar
 For every $x,y,z\in \mathbb{Z}$, we have
 $$(x+y)^3 - z^2 + 2xz - x^2 = x^3 + 3x^2y + 3xy^2 + y^3 - (z-x)^2$$.

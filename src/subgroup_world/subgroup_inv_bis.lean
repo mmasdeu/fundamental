@@ -7,7 +7,11 @@ variables {G : Type} [group G] {H : set G} -- hide
 
 The following variation is useful because since it is an `↔` statement, it can be `rw`ritten.
 -/
-
+/- Symbol:
+↔ : \iff
+∈ : \in
+x⁻¹ : x\-1
+-/
 /- Lemma:
 If $H\leq G$, then $x \in H$ if and only if $x^{-1} \in H$.
 -/

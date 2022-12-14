@@ -19,6 +19,10 @@ about why that does not work.
 
 -/
 
+/- Symbol:
+ℕ : \N
+-/
+
 /- Lemma : no-side-bar
 If $a$ is $3$ and $b$ is $4$ and $c$ is $5$, then $b$ is $4$.
 -/
