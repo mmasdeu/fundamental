@@ -1,5 +1,5 @@
 name = "TheFundamentalGame"
-version = "1.1.0"
+version = "2.0"
 extra_files = "extras"
 intro = "src/intro.lean"
 
@@ -13,18 +13,6 @@ name = "More Tactics World"
 id = 2
 parents = [1]
 levels = [  "src/tactics_world/*.lean" ]
-
-
-[[worlds]]
-name = "Set Theory World"
-id = 7
-parents = [2]
-levels = [
-  "src/set_theory_world/subset_transitive.lean",
-  "src/set_theory_world/distributive.lean",
-  "src/set_theory_world/image_tutorial.lean",
-  "src/set_theory_world/image_union.lean"
-]
 
 [[worlds]]
 name = "Fibonacci World"
@@ -66,3 +54,18 @@ levels = [
 "src/centralizer_world/centralizer_is_subgroup.lean",
 "src/centralizer_world/centralizer_normalizer.lean",
  ]
+
+[[worlds]]
+name = "Set Theory World"
+id = 7
+parents = [1]
+levels = [
+"src/set_theory_world/subset_transitive.lean",
+"src/set_theory_world/distributive.lean",
+"src/set_theory_world/image_tutorial.lean",
+"src/set_theory_world/image_union.lean",
+"src/set_theory_world/image_Union.lean",
+"src/set_theory_world/injective.lean",
+"src/set_theory_world/surjective.lean",
+"src/set_theory_world/preimage.lean"
+]

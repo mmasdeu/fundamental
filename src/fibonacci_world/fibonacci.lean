@@ -32,12 +32,15 @@ begin
       apply divides_add,
       {
         apply divides_mul_left,
+        use 1,
+        ring,
       },
       {
         cases hm with d hd,
         rw hd,
         apply divides_mul_right,
-        use d * Fib r,
+        apply divides_mul_left,
+        use 1,
         ring,
       }
     }

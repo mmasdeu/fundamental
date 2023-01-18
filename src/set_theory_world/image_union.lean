@@ -1,11 +1,15 @@
 import data.set.basic -- hide
+import set_theory_world.image_tutorial
 import tactic -- hide
 
 /-
 
-# The image of a union
+## The image of a union
 
 In this level we prove that the image of a union of two sets if the union of their images.
+
+In Lean, `x ∈ A ∪ B` is the same as `x ∈ A ∨ x ∈ B`, so the `left/right` tactics work in the goal, as well
+as the `cases` one in a hypothesis.
 -/
 
 open set -- hide
@@ -25,14 +29,14 @@ begin
     cases h1_h_left,
     {
       left, 
-      rw <-h1_h_right,
+      rw ← h1_h_right,
       use [h1_w, h1_h_left],
     },
-    {right,
-    rw <-h1_h_right,
-    use [h1_w, h1_h_left],
+    {
+      right,
+      rw  ← h1_h_right,
+      use [h1_w, h1_h_left],
     },
-
   },
   {
     intro h1,
@@ -40,25 +44,33 @@ begin
     {
       cases h1,
       cases h1_h,
-      rw <-h1_h_right,
-      have h : h1_w ∈ A ∪ B,
+      rw ← h1_h_right,
+      use h1_w,
+      split,
       {
         left,
-        exact h1_h_left,
+        assumption,
       },
-      use [h1_w, h],
+      refl,
     },
     {
       cases h1,
       cases h1_h,
-      rw <-h1_h_right,
-      have h : h1_w ∈ A ∪ B,
+      rw ← h1_h_right,
+      use h1_w,
+      split,
       {
         right,
-        exact h1_h_left,
+        assumption,
       },
-      use [h1_w, h],
+      refl,
     },
   },
+
+
+
+
+
+
 
 end

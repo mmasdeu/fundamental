@@ -1,8 +1,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.1.0\n"
-"POT-Creation-Date: 2022-12-14 13:20:58.552393\n"
+"Project-Id-Version: 2.0\n"
+"POT-Creation-Date: 2022-12-20 19:40:14.598826\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 
@@ -741,4 +741,168 @@ msgstr ""
 #: Centralizer World level 2
 msgid ""
 "The centralizer $C_G(A)$ is a normal subgroup of the normalizer $N_G(A)$.\n"
+msgstr ""
+
+#: world_config
+msgid "Set Theory World"
+msgstr ""
+
+#: Set Theory World level 1
+msgid ""
+"## Sets and subsets\n"
+"\n"
+"If `A, B, C` are sets, then we can state propositions such as `x ∈ A`, `A ⊆ "
+"B`, `A ⊂ B ∪ C` ...\n"
+"\n"
+"To Lean, `A ⊆ B` is the same as `∀ x, x ∈ A → x ∈ B`. Therefore:\n"
+"\n"
+"- If the have a goal like `A ⊆ B` we can use `intro x` to change the goal to "
+"`x ∈ A → x ∈ B`.\n"
+"- If we have `h: A ⊆ B` and we want to prove the goal `x ∈ B` we can use "
+"`apply` to change the goal to `x ∈ A`.\n"
+"- If we have `h: A ⊆ B` and `hx: x ∈ A` we can use `specialize` to obtain a "
+"proof of `x ∈ B`.\n"
+msgstr ""
+
+#: Set Theory World level 1
+msgid "If $A \\subseteq B$ and $B \\subseteq C$, then $A \\subseteq C$.\n"
+msgstr ""
+
+#: Set Theory World level 2
+msgid ""
+"## The distributive property\n"
+"\n"
+"The extensionality property of sets says that two sets are equal if and only "
+"if they have the same elements.\n"
+"\n"
+"One can `apply ext, intro x` to invoke it. The `ext` tactic is a shortcut "
+"for this.\n"
+msgstr ""
+
+#: Set Theory World level 2
+msgid "The distributive property of ∩ with respect to ∪.\n"
+msgstr ""
+
+#: Set Theory World level 3
+msgid ""
+"\n"
+"## Working with the image of a function\n"
+"\n"
+"In this level we will learn how to work with the image of a function.\n"
+"If `A: set X` and `B: set Y` are sets and we have `f : X → Y`, the image of "
+"`A` under `f`, $ f(A) $ is written as `f '' A`.\n"
+"\n"
+"If we have a proof that an element `b` belongs to the image, `hb: b ∈ f '' "
+"A` we can use `cases hb` to get a preimage and a proof that it belongs to "
+"the preimage.\n"
+"\n"
+"```\n"
+"hb_w : A\n"
+"hb_h : hb_w ∈ A ∧ f hb_w = b\n"
+"```\n"
+"\n"
+"We can change the names using `cases hb with a ha` instead. Now we will get\n"
+"\n"
+"```\n"
+"a: A\n"
+"ha: a ∈ A ∧ f a = b\n"
+"```\n"
+"\n"
+"If we want to prove something like `b ∈ f '' A`, we can use the `use` tactic "
+"to provide\n"
+"an element `a : X`, and then prove that `a ∈ A` and `f a = b`.\n"
+msgstr ""
+
+#: Set Theory World level 3
+msgid "If $ A ⊆ B $, then $ f(A) ⊆ f(B) $\n"
+msgstr ""
+
+#: Set Theory World level 4
+msgid ""
+"\n"
+"## The image of a union\n"
+"\n"
+"In this level we prove that the image of a union of two sets if the union of "
+"their images.\n"
+"\n"
+"In Lean, `x ∈ A ∪ B` is the same as `x ∈ A ∨ x ∈ B`, so the `left/right` "
+"tactics work in the goal, as well\n"
+"as the `cases` one in a hypothesis.\n"
+msgstr ""
+
+#: Set Theory World level 4
+msgid "$ f(A ∪ B) = f(A) ∪ f(B) $\n"
+msgstr ""
+
+#: Set Theory World level 5
+msgid ""
+"## Indexed unions\n"
+"\n"
+"In this level we learn how to work with arbitrary indexed unions. These are "
+"made\n"
+"of an index set, and a function `A : I → set X`, that picks a subset of `A "
+"i` of `X` for\n"
+"each index `i : I`.\n"
+"\n"
+"The defining property of the union is given by the following lemma:\n"
+msgstr ""
+
+#: Set Theory World level 5
+msgid "∪ : \\cup\n"
+msgstr ""
+
+#: Set Theory World level 5
+msgid "∩ : \\cap\n"
+msgstr ""
+
+#: Set Theory World level 5
+msgid "⋃ : \\Union\n"
+msgstr ""
+
+#: Set Theory World level 5
+msgid "⋂ : \\Inter\n"
+msgstr ""
+
+#: Set Theory World level 5
+msgid "The image of an arbitrary union of sets is the union of the images.\n"
+msgstr ""
+
+#: Set Theory World level 6
+msgid ""
+"## Functions\n"
+"\n"
+"In this level we practice the previous concepts, using functions between "
+"sets.\n"
+"The composition of two functions is written with ∘ (type it with `\\circ`), "
+"and we\n"
+"have available the definition of injective as well.\n"
+msgstr ""
+
+#: Set Theory World level 6
+msgid "∘ : \\circ\n"
+msgstr ""
+
+#: Set Theory World level 6
+msgid "If $g \\circ f$ is injective, then $f$ is injective.\n"
+msgstr ""
+
+#: Set Theory World level 7
+msgid ""
+"## Functions\n"
+"\n"
+"Here we introduce the definition of a function being surjective,\n"
+"and prove a \"dual\" version to the lemma from the previous level.\n"
+msgstr ""
+
+#: Set Theory World level 7
+msgid "If $g \\circ f$ is surjective, then $g$ is surjective.\n"
+msgstr ""
+
+#: Set Theory World level 8
+msgid ""
+"## The preimage of a function\n"
+"\n"
+"Given a function `f : X → Y`, the preimage of a subset $B ⊆ Y$ is written\n"
+"as `f⁻¹' B`. We will also need to refer to $X$ as a subset of itself. It is\n"
+"called `univ` in Lean. The following lemma is very well known.\n"
 msgstr ""
