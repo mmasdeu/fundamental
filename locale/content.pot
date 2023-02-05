@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
-"POT-Creation-Date: 2022-12-20 19:40:14.598826\n"
+"POT-Creation-Date: 2023-02-05 17:29:36.080222\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 
@@ -905,4 +905,8 @@ msgid ""
 "Given a function `f : X → Y`, the preimage of a subset $B ⊆ Y$ is written\n"
 "as `f⁻¹' B`. We will also need to refer to $X$ as a subset of itself. It is\n"
 "called `univ` in Lean. The following lemma is very well known.\n"
+msgstr ""
+
+#: Set Theory World level 8
+msgid "The image of the preimage of a set $B$ is $B ∩ \\textrm{Im}(f)$.\n"
 msgstr ""
